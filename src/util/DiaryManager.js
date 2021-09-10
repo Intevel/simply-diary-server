@@ -39,7 +39,7 @@ class DiaryManager {
 
 	static async fetchFullDiary(code){
 		var diary = await database.get(`diary_${code}`);
-		console.log(diary)
+		
 		return diary;
 	}
 
