@@ -16,6 +16,7 @@ class DiaryManager {
 		const newDiary = await database.set(`diary_${diaryCode}`, {
 			title: title,
 			code: diaryCode,
+			posts: [],
 			created_at: new Date()
 		});
 
@@ -39,7 +40,6 @@ class DiaryManager {
 
 	static async fetchFullDiary(code){
 		var diary = await database.get(`diary_${code}`);
-		
 		return diary;
 	}
 
