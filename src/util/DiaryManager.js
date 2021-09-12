@@ -38,6 +38,14 @@ class DiaryManager {
 		return post;
 	}
 
+	static async deleteDiaryPost(code, timestamp){
+		var posts = await database.get(`diary_${code}.posts`);
+		if(!posts) return false;
+		posts = posts.filter(post => post.created_at !== timestamp);
+		await database.set(`diary_${code}.posts`, posts);
+		return posts;
+	}
+
 	static async fetchFullDiary(code){
 		var diary = await database.get(`diary_${code}`);
 		return diary;
