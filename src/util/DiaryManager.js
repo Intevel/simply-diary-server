@@ -64,7 +64,7 @@ class DiaryManager {
 				length: 6,
 				charset: 'alphabetic'
 			});
-			return DiaryManager.generateUniqueUserID(code);
+			return DiaryManager.generateUniqueDiaryCode(code);
 		}
 		console.log("[LOG] Diary Code is unique " + code);
 		return code;
